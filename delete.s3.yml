@@ -1,0 +1,9 @@
+---
+- hosts: local
+  connection: local
+  gather_facts: no
+  tasks:    
+    - name: Delete a bucket and all contents
+      amazon.aws.aws_s3:
+        bucket: thermal123
+        mode: delete

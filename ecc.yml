@@ -1,0 +1,15 @@
+---
+- hosts: local
+  connection: local
+  gather_facts: no
+  tasks:
+  - name: launching AWS instance using Ansible
+    ec2:
+      key_name: jaipal
+      instance_type: t2.micro
+      image: ami-08c40ec9ead489470
+      region: us-east-1      
+      wait: yes     
+      count: 2
+      
+      
